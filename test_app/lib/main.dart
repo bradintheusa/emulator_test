@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -8,6 +9,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  FirebaseFirestore.instance.useFirestoreEmulator("localhost", 8080);
   runApp(const MyApp());
 }
 
@@ -44,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    firestore.useFirestoreEmulator("localhost", 8080);
+    // firestore.useFirestoreEmulator("localhost", 8080);
     documentStream = firestore.collection('test').doc('doc1').snapshots();
   }
 
