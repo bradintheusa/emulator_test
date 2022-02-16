@@ -1,11 +1,11 @@
 
 
-# Firebase emaulator and physical android device.
+# Firebase Emulator and Physical Android Device.
 
 I spent a lot of time getting a physical android device to work with the firestore emulator. 
 This repository has a working example.
 
-The solution is to use your ip addrees in firebase.json
+The solution is to use your ip address in firebase.json
 
 ```
   "emulators": {
