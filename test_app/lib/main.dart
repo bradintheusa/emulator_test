@@ -9,7 +9,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  FirebaseFirestore.instance.useFirestoreEmulator("localhost", 8080);
+  FirebaseFirestore.instance.useFirestoreEmulator("192.168.0.199", 8080);
   runApp(const MyApp());
 }
 
