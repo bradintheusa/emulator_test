@@ -1,3 +1,30 @@
+
+
+# Firebase emaulator and physical android device.
+
+I spent a lot of time getting a physical android device to work with the firestore emulator. 
+This repository has a working example.
+
+The solution is to use your ip addrees in firebase.json
+
+```
+  "emulators": {
+    "firestore": {
+      "host":"192.168.0.199",
+      "port": 8080
+    },
+```
+
+and in your code. Fro me that's Flutter and Dart
+
+```
+FirebaseFirestore.instance.useFirestoreEmulator("192.168.0.199", 8080);
+```
+
+
+If you have questions please reach out. It took me a while to solve and I'd like to help others.
+
+
 # test_app
 
 Start the emulator
@@ -51,4 +78,10 @@ D/vndksupport(  851): Loading /vendor/lib64/hw/android.hardware.graphics.mapper@
 D/vndksupport(  851): Loading /vendor/lib64/hw/gralloc.msm8992.so from current namespace instead of sphal namespace.
 E/flutter (  851): [ERROR:flutter/lib/ui/ui_dart_state.cc(209)] Unhandled Exception: [firebase_auth/unknown] com.google.firebase.FirebaseException: An internal error has occurred. [ Failed to connect to /10.0.2.2:9099 ]
 E/flutter (  851): #0      MethodChannelFirebaseAuth.signInAnonymously (package:firebase_auth_platform_interface/src/method_channel/method_channel_firebase_auth.dart:423:7)
+```
+
+```
+W/Firestore(29632): (24.0.1) [OnlineStateTracker]: Could not reach Cloud Firestore backend. Backend didn't respond within 10 seconds
+W/Firestore(29632):
+W/Firestore(29632): This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
 ```
