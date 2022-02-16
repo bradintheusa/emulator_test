@@ -15,7 +15,7 @@ The solution is to use your ip address in firebase.json
     },
 ```
 
-and in your code. Fro me that's Flutter and Dart
+and in your code. For me that's Flutter and Dart
 
 ```
 FirebaseFirestore.instance.useFirestoreEmulator("192.168.0.199", 8080);
